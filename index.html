@@ -3,31 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site de Vidéos - Mega.nz</title>
+    <title>Streaming Talmo et Vidéos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Mes Vidéos Mega.nz</h1>
-        <p>Regardez vos vidéos préférées directement depuis Mega.nz</p>
+        <h1>Streaming Talmo & Vidéos</h1>
+        <p>Regardez le live Twitch de Talmo et deux vidéos sélectionnées.</p>
     </header>
     <main>
+        <!-- Section Twitch -->
+        <section class="stream">
+            <h2>Live de Talmo</h2>
+            <div class="twitch-embed">
+                <!-- Intégration du lecteur Twitch -->
+                <iframe 
+                    src="https://player.twitch.tv/?channel=talmo&player=facebook&autoplay=true&parent=localhost&parent=example.com" 
+                    width="854" 
+                    height="480" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Section Vidéos -->
         <section class="videos">
+            <h2>Vidéos Sélectionnées</h2>
             <!-- Vidéo 1 -->
             <div class="video">
-                <h3>Rec Room Friend Finder</h3>
-                <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/yBsBwZyB#xxtH9DZpR_XJrLzaSVxKGQj3JBNTY5IXDBWCw216HtA" allowfullscreen ></iframe>
+                <h3>Titre de la Vidéo 1</h3>
+                <iframe 
+                    src="https://mega.nz/embed/xxxxxxxx#xxxxxxxxxxxxxxxxxxxxxxxx" 
+                    width="640" 
+                    height="360" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
             </div>
             <!-- Vidéo 2 -->
             <div class="video">
-                <h3>Gig Maker Trailer</h3>
-                <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/KY0mWLTC#2x6vqXyYLznwgIQOQuM6ZiwTFD_FB7mJpo-yjYjwBNo" allowfullscreen ></iframe>
+                <h3>Titre de la Vidéo 2</h3>
+                <iframe 
+                    src="https://mega.nz/embed/yyyyyyy#yyyyyyyyyyyyyyyyyyyyyyyyy" 
+                    width="640" 
+                    height="360" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
             </div>
-            <!-- Ajouter plus de vidéos ici -->
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 - Site de Vidéos Mega.nz</p>
+        <p>&copy; 2024 - Streaming Talmo et Vidéos</p>
     </footer>
 </body>
 </html>
