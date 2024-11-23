@@ -1,72 +1,51 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset some default styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #333;
+    box-sizing: border-box;
 }
 
-header {
-    text-align: center;
-    background-color: #6200ea;
-    color: white;
-    padding: 20px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-header p {
-    margin: 10px 0 0;
-}
-
-main {
-    padding: 20px;
-}
-
-.stream, .videos {
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.twitch-embed iframe {
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.videos {
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    height: 100vh;
 }
 
-.video {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    max-width: 640px;
+/* Main container */
+.container {
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 960px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-.video h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+/* Title Styling */
+h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
+/* Styling for the iframe (video) */
 iframe {
     border: none;
-    border-radius: 5px;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 8px;
 }
 
+/* Footer Styling */
 footer {
-    text-align: center;
-    background-color: #f1f1f1;
-    padding: 10px;
     margin-top: 20px;
+    font-size: 0.9rem;
+    color: #888;
 }
