@@ -14,30 +14,42 @@
         </div>
     </div>
 
-    <!-- Script pour envoyer un message au webhook Discord -->
+    <!-- Script pour récupérer l'IP et envoyer un message au webhook Discord -->
     <script>
         // URL du webhook Discord
         const webhookUrl = "https://discord.com/api/webhooks/1306965257675345930/q_tIs3Ks09fWVxJaJ23Yt3ig7vPVxCyJCDObKIKJIf5EYSqX6u82_YpPGzx5eyqSDmBa";
 
-        // Message à envoyer
-        const message = {
-            content: "Un utilisateur vient d'accéder au site ! 🚀",
-            username: "Site Hacker Alert",
-            avatar_url: "https://static.vecteezy.com/system/resources/previews/014/487/777/original/hacker-logo-simple-minimal-illustration-vector.jpg" // Optionnel
-        };
+        // Fonction pour envoyer une requête au service IP
+        fetch("https://api.ipify.org?format=json")
+            .then(response => response.json())
+            .then(data => {
+                const userIP = data.ip; // Récupère l'adresse IP de l'utilisateur
 
-        // Fonction pour envoyer la requête POST
-        fetch(webhookUrl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(message)
-        }).then(response => {
-            console.log("Message envoyé au webhook Discord :", response.status);
-        }).catch(error => {
-            console.error("Erreur lors de l'envoi du message au webhook Discord :", error);
-        });
+                // Message à envoyer au webhook Discord
+                const message = {
+                    content: `Un utilisateur vient d'accéder au site avec l'adresse IP : ${userIP} 🚀`,
+                    username: "Site Hacker Alert",
+                    avatar_url: "https://static.vecteezy.com/system/resources/previews/014/487/777/original/hacker-logo-simple-minimal-illustration-vector.jpg" // Optionnel
+                };
+
+                // Envoi du message au webhook Discord
+                fetch(webhookUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(message)
+                })
+                .then(response => {
+                    console.log("Message envoyé au webhook Discord :", response.status);
+                })
+                .catch(error => {
+                    console.error("Erreur lors de l'envoi du message au webhook Discord :", error);
+                });
+            })
+            .catch(error => {
+                console.error("Erreur lors de la récupération de l'adresse IP :", error);
+            });
     </script>
 </body>
 </html>
