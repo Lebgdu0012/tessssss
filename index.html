@@ -4,16 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visionner la vidéo</title>
-    <!-- Lien vers le fichier CSS externe -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="terminal">
         <h1>Visionner la vidéo</h1>
-        <!-- Conteneur de l'iframe pour la vidéo -->
         <div class="video-container">
             <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/2Asj2QQQ#fbP3uDYM3Y6cv27pAO0eOt7fEbzhhf2jF7T_znemEZQ" allowfullscreen ></iframe>
         </div>
     </div>
+
+    <!-- Script pour envoyer un message au webhook Discord -->
+    <script>
+        // URL du webhook Discord
+        const webhookUrl = "https://discord.com/api/webhooks/1306965257675345930/q_tIs3Ks09fWVxJaJ23Yt3ig7vPVxCyJCDObKIKJIf5EYSqX6u82_YpPGzx5eyqSDmBa";
+
+        // Message à envoyer
+        const message = {
+            content: "Un utilisateur vient d'accéder au site ! 🚀",
+            username: "Site Hacker Alert",
+            avatar_url: "https://static.vecteezy.com/system/resources/previews/014/487/777/original/hacker-logo-simple-minimal-illustration-vector.jpg" // Optionnel
+        };
+
+        // Fonction pour envoyer la requête POST
+        fetch(webhookUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(message)
+        }).then(response => {
+            console.log("Message envoyé au webhook Discord :", response.status);
+        }).catch(error => {
+            console.error("Erreur lors de l'envoi du message au webhook Discord :", error);
+        });
+    </script>
 </body>
 </html>
